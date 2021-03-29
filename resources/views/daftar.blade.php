@@ -11,7 +11,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Forms</title>
+    <title>Daftar Siswa</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('template')}}/css/font-face.css" rel="stylesheet" media="all">
@@ -155,11 +155,8 @@
                                             <button type="back" class="btn btn-danger btn-sm">
                                                 <i class=""></i> Kembali
                                             </button>
-                                            <a href="">
-                                            
-                                            </a>
                                             <button type="submit" class="btn btn-primary btn-sm">
-                                                <i class=""></i> Daftar
+                                                Daftar
                                             </button>
                                     </div>  
                                 </form>

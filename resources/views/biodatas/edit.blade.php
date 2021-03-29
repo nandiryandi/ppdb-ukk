@@ -158,7 +158,7 @@
                                                 Kembali
                                             </a>
                                             <button type="submit" class="btn btn-primary btn-sm">
-                                                Daftar
+                                                Edit
                                             </button>
                                     </div>  
                                 </form>

@@ -53,7 +53,7 @@ class BiodataController extends Controller
         ]);
 
         Biodata::create($request->all());
-        return redirect()->route('biodatas.index')
+        return redirect()->route('landingPage')
                         ->with('Sukses','Siswa Telah Terdaftar');
         
     }
@@ -125,5 +125,10 @@ class BiodataController extends Controller
 
         $pdf = PDF::loadview('biodatas.biodata-pdf',['biodata'=>$biodatas]);
         return $pdf->download('laporan-data-ppdb');
+    }
+
+    public function daftar()
+    {
+        return view('daftar');
     }
 }

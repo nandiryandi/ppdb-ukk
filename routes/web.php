@@ -16,9 +16,18 @@ use App\Http\Controllers\BiodataController;
 
 
 /*Route::get('/', function () {
-    return view('biodatas.index');
+    return view('/daftar');
 });*/
-Route::get('/', [App\Http\Controllers\BiodataController::class, 'index']);
+
+Route::get('/', function () {
+    return view('home');
+})->name('landingPage');
+
+Route::get('/daftar', function () {
+    return view('daftar');
+});
+
+//Route::get('/', [App\Http\Controllers\BiodataController::class, 'daftar']);
 Route::get('/biodatas/downloadPDF', [App\Http\Controllers\BiodataController::class, 'downloadPDF']);
 
 Route::resource('biodatas', BiodataController::class);

@@ -83,9 +83,11 @@
                                 <h3 class="title-5 m-b-35">Data Siswa</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-right">
+                                        <!--
                                         <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ route('biodatas.create') }}">
                                             <i class="zmdi zmdi-plus"></i>Tambah Siswa</button>
                                         </a>
+                                        -->
                                         <a class="au-btn au-btn-icon au-btn--blue au-btn--small" target="_blank" href="/biodatas/downloadPDF">
                                             <i class="zmdi zmdi-download"></i>Unduh Data</button>
                                         </a>
