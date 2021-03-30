@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Biodata;
 use Illuminate\Http\Request;
 use PDF;
+use DB;
 
 class BiodataController extends Controller
 {
@@ -31,7 +32,6 @@ class BiodataController extends Controller
     {
         return view('biodatas.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -125,6 +125,20 @@ class BiodataController extends Controller
 
         $pdf = PDF::loadview('biodatas.biodata-pdf',['biodata'=>$biodatas]);
         return $pdf->download('laporan-data-ppdb');
+    }
+
+    public function cetakpdf(Request $request)
+    {
+        $biodatas = DB::table('biodatas')
+            ->where('id', $request->id)
+            ->get();
+        $NAMA = $biodatas[0]->NAMA;
+        $pdf = PDF::loadView('biodatas.print', [
+            'biodatas' => $biodatas
+        ])
+            ->setPaper('a4', 'potrait');
+
+        return $pdf->stream($NAMA . '.pdf');
     }
 
     public function daftar()

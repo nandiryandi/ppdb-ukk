@@ -130,6 +130,9 @@
                                                             <a class="item" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('biodatas.edit' ,$biodata->id) }}">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </a>
+                                                            <a class="item" data-toggle="tooltip" data-placement="top" title="Unduh" target="_blank" href="{{ route('cetakpdf', $biodata->id) }}">
+                                                                <i class="zmdi zmdi-download"></i>
+                                                            </a>
 
                                                             @csrf
                                                             @method('DELETE')

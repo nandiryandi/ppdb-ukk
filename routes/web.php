@@ -29,6 +29,8 @@ Route::get('/daftar', function () {
 
 //Route::get('/', [App\Http\Controllers\BiodataController::class, 'daftar']);
 Route::get('/biodatas/downloadPDF', [App\Http\Controllers\BiodataController::class, 'downloadPDF']);
+Route::get('/biodatas/print/{id}', [BiodataController::class, 'cetakpdf'])->name('cetakpdf');
+
 
 Route::resource('biodatas', BiodataController::class);
 
