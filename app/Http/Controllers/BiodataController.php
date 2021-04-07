@@ -40,6 +40,10 @@ class BiodataController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'required' => 'Harap isi :attribute'
+        ];
+
         $request->validate([
             'NIS' => 'required',
             'NAMA' => 'required',
@@ -50,11 +54,11 @@ class BiodataController extends Controller
             'Asal_sekolah' => 'required',
             'Kelas' => 'required',
             'Jurusan' => 'required'
-        ]);
+        ], $messages);
 
         Biodata::create($request->all());
         return redirect()->route('landingPage')
-                        ->with('Sukses','Siswa Telah Terdaftar');
+                        ->with('success','Selamat Kamu Telah Terdaftar!'); 
         
     }
 
@@ -103,7 +107,7 @@ class BiodataController extends Controller
 
         $biodata->update($request->all());
         return redirect()->route('biodatas.index')
-                        ->with('Sukses','Data Siswa Telah Terupdate');
+                        ->with('success','Data Siswa Telah Terupdate');
     }
 
     /**
@@ -116,9 +120,8 @@ class BiodataController extends Controller
     {
         $biodata->delete();
         return redirect()->route('biodatas.index')
-                        ->with('Sukses', 'Data Siswa Telah Terhapus');
+                      ->with('success','Data Siswa Telah Terhapus');
     }
-    
     public function downloadPDF()
     {
         $biodatas = Biodata::all();

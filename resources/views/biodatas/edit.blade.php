@@ -89,7 +89,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <select name="Jns_kelamin" id="Jns_kelamin" value="{{ $biodata->Jns_kelamin }}" class="form-control">
-                                                        <option value="0">Jenis Kelamin</option>
+                                                        <option value="{{ $biodata->Jns_kelamin }}">{{ $biodata->Jns_kelamin }}</option>
                                                         <option value="Laki-laki">Laki-laki</option>
                                                         <option value="Perempuan">Perempuan</option>
                                                     </select>
@@ -141,7 +141,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <select name="Jurusan" id="Jurusan" value="{{ $biodata->Jurusan }}" class="form-control">
-                                                        <option value="0">Jurusan</option>
+                                                        <option value="{{ $biodata->Jurusan }}">{{ $biodata->Jurusan }}</option>
                                                         <option value="BDP">BDP</option>
                                                         <option value="Multimedia">Multimedia</option>
                                                         <option value="OTKP">OTKP</option>

@@ -67,14 +67,57 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap pull-right">
+                        <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="{{asset('template')}}/images/Profile.png" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="{{asset('template')}}/images/Profile.png" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">{{ Auth::user()->name }}</a>
+                                                    </h5>
+                                                    <span class="email">{{ Auth::user()->email }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a hhref="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    <i class="zmdi zmdi-power"></i>{{ __('Logout') }}</a>  
+                                                
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </header>
             <!-- END HEADER DESKTOP-->
-
             <!-- MAIN CONTENT-->
             <div class="main-content">
+            <br>
+            @if ($message = Session::get('success'))
+                 <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                    <span class="badge badge-pill badge-success">Sukses</span>
+                        {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -118,7 +161,7 @@
                                                 <td>{{ $biodata->NAMA }}</td>
                                                 <td>{{ $biodata->Jns_kelamin }}</td>
                                                 <td>{{ $biodata->Temp_lahir }}</td>
-                                                <td>{{ $biodata->Tgl_lahir }}</td>
+                                                <td>{{ Carbon\Carbon::parse( $biodata->Tgl_lahir )->isoFormat('DD MMMM YYYY') }}</td>
                                                 <td>{{ $biodata->Alamat }}</td>
                                                 <td>{{ $biodata->Asal_sekolah }}</td>
                                                 <td>{{ $biodata->Kelas }}</td>

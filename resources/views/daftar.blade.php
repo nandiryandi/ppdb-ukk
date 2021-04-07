@@ -12,6 +12,7 @@
 
     <!-- Title Page-->
     <title>Daftar Siswa</title>
+    <link rel="icon" href="{{asset('template')}}/images/logo2.png">
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('template')}}/css/font-face.css" rel="stylesheet" media="all">
@@ -36,7 +37,6 @@
 
 @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -70,7 +70,7 @@
                                                     <label for="NIS" class=" form-control-label">NIS</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="number" id="NIS" name="NIS" placeholder="NIS" class="form-control">
+                                                    <input type="number" id="NIS" name="NIS" placeholder="NIS" class="form-control" required autocomplete="NIS" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -78,7 +78,7 @@
                                                     <label for="NAMA" class=" form-control-label">Nama</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="NAMA" name="NAMA" placeholder="Nama" class="form-control">
+                                                    <input type="text" id="NAMA" name="NAMA" placeholder="Nama" class="form-control" required autocomplete="Nama" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -86,8 +86,8 @@
                                                     <label for="Jns_kelamin" class=" form-control-label">Jenis Kelamin</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <select name="Jns_kelamin" id="Jns_kelamin" class="form-control">
-                                                        <option value="0">Jenis Kelamin</option>
+                                                    <select name="Jns_kelamin" id="Jns_kelamin" class="form-control" required autocomplete="Jenis Kelamin" autofocus> 
+                                                        <option value="0" disabled selected>Jenis Kelamin</option>
                                                         <option value="Laki-laki">Laki-laki</option>
                                                         <option value="Perempuan">Perempuan</option>
                                                     </select>
@@ -98,7 +98,7 @@
                                                     <label for="Temp_lahir" class=" form-control-label">Tempat Lahir</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="Temp_lahir" name="Temp_lahir" placeholder="Tempat Lahir" class="form-control">
+                                                    <input type="text" id="Temp_lahir" name="Temp_lahir" placeholder="Tempat Lahir" class="form-control" required autocomplete="Tempat Lahir" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -106,7 +106,7 @@
                                                     <label for="Tgl_lahir" class=" form-control-label">Tanggal Lahir</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="date" id="Tgl_lahir" name="Tgl_lahir" class="form-control">
+                                                    <input type="date" id="Tgl_lahir" name="Tgl_lahir" class="form-control" required autocomplete="Tanggal Lahir" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -114,7 +114,7 @@
                                                     <label for="Alamat" class=" form-control-label">Alamat</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="Alamat" name="Alamat" placeholder="Alamat" class="form-control">
+                                                    <input type="text" id="Alamat" name="Alamat" placeholder="Alamat" class="form-control" required autocomplete="Alamat" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -122,7 +122,7 @@
                                                     <label for="Asal_sekolah" class=" form-control-label">Asal Sekolah</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="Asal_sekolah" name="Asal_sekolah" placeholder="Asal Sekolah" class="form-control">
+                                                    <input type="text" id="Asal_sekolah" name="Asal_sekolah" placeholder="Asal Sekolah" class="form-control" required autocomplete="Asal Sekolah" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -130,7 +130,7 @@
                                                     <label for="Kelas" class=" form-control-label">Kelas</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="Kelas" name="Kelas" placeholder="Kelas" class="form-control">
+                                                    <input type="text" id="Kelas" name="Kelas" placeholder="Kelas" class="form-control" required autocomplete="Kelas" autofocus>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -138,8 +138,8 @@
                                                     <label for="Jurusan" class=" form-control-label">Jurusan</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <select name="Jurusan" id="Jurusan" class="form-control">
-                                                        <option value="0">Jurusan</option>
+                                                    <select name="Jurusan" id="Jurusan" class="form-control" required autocomplete="Jurusan" autofocus>
+                                                        <option value="0" disabled selected>Jurusan</option>
                                                         <option value="BDP">BDP</option>
                                                         <option value="Multimedia">Multimedia</option>
                                                         <option value="OTKP">OTKP</option>
@@ -152,9 +152,9 @@
                                             </div>
                                     </div>
                                     <div class="card-footer">
-                                            <button type="back" class="btn btn-danger btn-sm">
-                                                <i class=""></i> Kembali
-                                            </button>
+                                            <a href="{{ url()->previous() }}" class="btn btn-danger btn-sm">
+                                                Kembali
+                                            </a>
                                             <button type="submit" class="btn btn-primary btn-sm">
                                                 Daftar
                                             </button>

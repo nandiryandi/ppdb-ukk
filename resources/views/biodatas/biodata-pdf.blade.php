@@ -18,7 +18,6 @@
 	<table class='table table-bordered'>
 		<thead>
 			<tr>
-                <th>No</th>
                 <th>NIS</th>
                 <th>Nama</th>
                 <th>Jenis Kelamin</th>
@@ -31,15 +30,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			@php $i=1 @endphp
 			@foreach($biodata as $biodata)
 			<tr>
-                <td>{{ ++$i }}</td>
                 <td>{{ $biodata->NIS }}</td>
                 <td>{{ $biodata->NAMA }}</td>
                 <td>{{ $biodata->Jns_kelamin }}</td>
                 <td>{{ $biodata->Temp_lahir }}</td>
-                <td>{{ $biodata->Tgl_lahir }}</td>
+                <td>{{ Carbon\Carbon::parse($biodata->Tgl_lahir)->isoFormat('DD MMMM YYYY') }}</td>
                 <td>{{ $biodata->Alamat }}</td>
                 <td>{{ $biodata->Asal_sekolah }}</td>
                 <td>{{ $biodata->Kelas }}</td>

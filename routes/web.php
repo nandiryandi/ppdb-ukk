@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,6 @@ Route::resource('biodatas', BiodataController::class);
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+

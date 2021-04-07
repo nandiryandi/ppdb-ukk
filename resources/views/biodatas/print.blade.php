@@ -37,7 +37,7 @@
         <tr>
             <th width="35%"><b>TANGGAL DAFTAR</b></th>
             <td width="3%">:</td>
-            <td>{{ Carbon\Carbon::parse( $biodata->created_at )->isoFormat('D MMMM Y') }}</td>
+            <td>{{ Carbon\Carbon::parse( $biodata->created_at )->isoFormat('DD MMMM YYYY') }}</td>
         </tr>
         <tr>
             <th><b>NOMOR SELEKSI</b></th>
@@ -67,7 +67,7 @@
         <tr>
             <th><b>TANGGAL LAHIR</b></th>
             <td width="3%">:</td>
-            <td>{{ Carbon\Carbon::parse($biodata->Tgl_lahir)->isoFormat('DD MM YYYY') }}</td>
+            <td>{{ Carbon\Carbon::parse($biodata->Tgl_lahir)->isoFormat('DD MMMM YYYY') }}</td>
         </tr>
         <tr>
             <th><b>ALAMAT</b></th>
@@ -116,7 +116,7 @@
     <br>
     <table width="100%" border="0">
         <tr>
-            <td colspan="3" style="background-color: white"><b>A. Biaya Seleksi</b></td>
+            <td colspan="3" style="background-color: white"><b>B. Biaya Seleksi</b></td>
         </tr>
         <tr>
             <td>Pembayaran uang seleksi sebesasr Rp. 175.588 melalui transfer bank:</td>

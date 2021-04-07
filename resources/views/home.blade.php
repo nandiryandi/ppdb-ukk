@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>PPDB SMK WIKRAMA BOGOR</title>
+  <link rel="icon" href="{{asset('template')}}/images/logo2.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,6 +12,17 @@
   <link rel="stylesheet" href="{{asset('template2')}}/vendors/aos/css/aos.css">
   <link rel="stylesheet" href="{{asset('template2')}}/css/style.min.css">
 </head>
+
+@if ($message = Session::get('success'))
+    <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+      <span class="badge badge-pill badge-success">Sukses</span>
+        {{ $message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
+
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
   <header id="header-section">
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
